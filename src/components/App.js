@@ -1,11 +1,8 @@
 import React, {Component, useState} from "react";
 import '../styles/App.css';
 
-const relativeList = [
-  { id: 1, name: 'John' },
-  { id: 2, name: 'Jane' },
-  { id: 3, name: 'Bob' },
-];
+
+const relatives = ['John', 'Mary', 'David', 'Sarah'];
 
 class App extends Component {
     render() {
@@ -13,12 +10,11 @@ class App extends Component {
         return(
             <div id="main">
                {/* Do not remove the main div */}
-             <h1>Relatives to visit:</h1>
               <ol>
-                    {relativeList.map((relative) => (
-                      <li key={relative.id}>{relative.name}</li>
-                    ))}
-              </ol>
+      {relatives.map((relative, index) => (
+        <li key={`relativeListItem${index + 1}`}>{relative}</li>
+      ))}
+    </ol>
             </div>
         )
     }
