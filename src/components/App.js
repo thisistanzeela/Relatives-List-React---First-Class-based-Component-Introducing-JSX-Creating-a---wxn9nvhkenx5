@@ -1,19 +1,24 @@
 import React, {Component, useState} from "react";
 import '../styles/App.css';
 
+const relativeList = [
+  { id: 1, name: 'John' },
+  { id: 2, name: 'Jane' },
+  { id: 3, name: 'Bob' },
+];
+
 class App extends Component {
     render() {
 
         return(
             <div id="main">
                {/* Do not remove the main div */}
-            <ol key="relativeList">
-                  <li key="relativeListItem1">Amit</li>
-                  <li key="relativeListItem2">Bhavna</li>
-                  <li key="relativeListItem3">Chandan</li>
-                  <li key="relativeListItem4">Divya</li>
-                  <li key="relativeListItem5">Esha</li>
-            </ol>
+             <h1>Relatives to visit:</h1>
+              <ol>
+                    {relativeList.map((relative) => (
+                      <li key={relative.id}>{relative.name}</li>
+                    ))}
+              </ol>
             </div>
         )
     }
